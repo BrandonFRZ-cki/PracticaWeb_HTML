@@ -3,27 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ranking de las 10 jugadas del Texas Hold'em, de la escalera real a la carta alta, con ejemplos y cómo desempatar.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="BFRZ - Ranking de manos de póker">
+    <link rel="icon" href="../images/as-picas.svg" type="image/svg+xml">
     <title>BFRZ - Ranking de manos</title>
 </head>
-<body>
+<body id="arriba">
+
+    <a href="#contenido">Saltar al contenido</a>
 
     <header>
         <h1>Ranking de manos</h1>
-        <marquee behavior="scroll" direction="left" scrollamount="6">Escalera real &gt; escalera de color &gt; p&oacute;ker &gt; full &#9824; Memor&iacute;zalas</marquee>
-        <nav>
-            <p>
-                <a href="../index.html">Inicio</a> |
-                <a href="reglas.html">Reglas</a> |
-                <a href="manos.html">Ranking de manos</a> |
-                <a href="torneos.html">Torneos</a> |
-                <a href="glosario.html">Glosario</a> |
-                <a href="historia.html">Historia y jugadores</a> |
-                <a href="ecuador.html">Poker en Ecuador</a>
-            </p>
+        <marquee behavior="scroll" direction="left" scrollamount="6">Escalera real &gt; escalera de color &gt; póker &gt; full &#9824; Memorízalas</marquee>
+        <nav aria-label="Menú principal">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="reglas.html">Reglas</a></li>
+                <li><a href="manos.html" aria-current="page">Ranking de manos</a></li>
+                <li><a href="torneos.html">Torneos</a></li>
+                <li><a href="glosario.html">Glosario</a></li>
+                <li><a href="historia.html">Historia y jugadores</a></li>
+                <li><a href="ecuador.html">Póker en Ecuador</a></li>
+            </ul>
         </nav>
     </header>
 
-    <main>
+    <main id="contenido">
+
         <section>
             <h2>Jugadas de mayor a menor valor</h2>
             <p>La tabla muestra las <strong>10 jugadas</strong> del Texas Hold'em, desde la más alta (1) hasta la más baja (10).<br>
@@ -33,75 +40,92 @@
                 <caption>Ranking oficial de manos de póker</caption>
                 <thead>
                     <tr>
-                        <th>Posición</th>
-                        <th>Mano</th>
-                        <th>Descripción</th>
-                        <th>Ejemplo</th>
+                        <th scope="col">Posición</th>
+                        <th scope="col">Mano</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Ejemplo</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1</td>
+                        <th scope="row">1</th>
                         <td>Escalera real</td>
                         <td>As, K, Q, J y 10 del mismo palo</td>
                         <td>A&#9824; K&#9824; Q&#9824; J&#9824; 10&#9824;</td>
                     </tr>
                     <tr>
-                        <td>2</td>
+                        <th scope="row">2</th>
                         <td>Escalera de color</td>
                         <td>Cinco cartas consecutivas del mismo palo</td>
                         <td>9&#9829; 8&#9829; 7&#9829; 6&#9829; 5&#9829;</td>
                     </tr>
                     <tr>
-                        <td>3</td>
+                        <th scope="row">3</th>
                         <td>Póker</td>
                         <td>Cuatro cartas del mismo valor</td>
                         <td>7&#9824; 7&#9829; 7&#9830; 7&#9827;</td>
                     </tr>
                     <tr>
-                        <td>4</td>
+                        <th scope="row">4</th>
                         <td>Full</td>
                         <td>Trío más una pareja</td>
                         <td>K&#9824; K&#9829; K&#9830; 4&#9827; 4&#9824;</td>
                     </tr>
                     <tr>
-                        <td>5</td>
+                        <th scope="row">5</th>
                         <td>Color</td>
                         <td>Cinco cartas del mismo palo, sin orden</td>
                         <td>A&#9830; J&#9830; 8&#9830; 4&#9830; 2&#9830;</td>
                     </tr>
                     <tr>
-                        <td>6</td>
+                        <th scope="row">6</th>
                         <td>Escalera</td>
                         <td>Cinco cartas consecutivas de distintos palos</td>
                         <td>10&#9824; J&#9829; Q&#9830; K&#9827; A&#9824;</td>
                     </tr>
                     <tr>
-                        <td>7</td>
+                        <th scope="row">7</th>
                         <td>Trío</td>
                         <td>Tres cartas del mismo valor</td>
                         <td>9&#9824; 9&#9829; 9&#9830;</td>
                     </tr>
                     <tr>
-                        <td>8</td>
+                        <th scope="row">8</th>
                         <td>Doble pareja</td>
                         <td>Dos parejas distintas</td>
                         <td>Q&#9824; Q&#9829; 5&#9830; 5&#9827;</td>
                     </tr>
                     <tr>
-                        <td>9</td>
+                        <th scope="row">9</th>
                         <td>Pareja</td>
                         <td>Dos cartas del mismo valor</td>
                         <td>J&#9824; J&#9829;</td>
                     </tr>
                     <tr>
-                        <td>10</td>
+                        <th scope="row">10</th>
                         <td>Carta alta</td>
                         <td>Ninguna combinación; gana la carta más alta</td>
                         <td>A&#9830; 9&#9824; 6&#9829; 3&#9827; 2&#9824;</td>
                     </tr>
                 </tbody>
             </table>
+        </section>
+
+        <section>
+            <h2>Pon a prueba tu memoria</h2>
+            <p>Intenta responder antes de abrir la respuesta.</p>
+            <details>
+                <summary>¿Gana un color o una escalera?</summary>
+                <p>El color, porque ocupa la posición 5 y la escalera la 6.</p>
+            </details>
+            <details>
+                <summary>¿Gana un full o un color?</summary>
+                <p>El full, porque ocupa la posición 4.</p>
+            </details>
+            <details>
+                <summary>¿Gana un trío o una doble pareja?</summary>
+                <p>El trío, porque ocupa la posición 7 y la doble pareja la 8.</p>
+            </details>
         </section>
 
         <article>
@@ -118,7 +142,7 @@
         <section>
             <h2>As de picas</h2>
             <figure>
-                <img src="../images/as-picas.svg" alt="As de picas, una carta blanca con borde dorado y el símbolo de picas en el centro">
+                <img src="../images/as-picas.svg" alt="As de picas, una carta blanca con borde dorado y el símbolo de picas en el centro" width="200" height="280" loading="lazy">
                 <figcaption>El <em>as de picas</em>, una de las cartas más conocidas de la baraja.</figcaption>
             </figure>
         </section>
@@ -127,12 +151,16 @@
             <h3>Recuerda</h3>
             <p>El <strong>as</strong> puede valer como carta alta (la más alta) o como la carta más baja en una escalera del tipo A-2-3-4-5.</p>
         </aside>
+
     </main>
 
     <footer>
         <p>Desarrollado por: Brandon (BFRZ)</p>
-        <p>Correo: <a href="mailto:brandonfrz2006@gmail.com">brandonfrz2006@gmail.com</a></p>
-        <p>&copy; 2026 Todos los derechos reservados.</p>
+        <address>
+            Correo: <a href="mailto:brandonfrz2006@gmail.com">brandonfrz2006@gmail.com</a>
+        </address>
+        <p>&copy; <time datetime="2026">2026</time> Todos los derechos reservados.</p>
+        <p><a href="#arriba">Volver arriba</a></p>
     </footer>
 
 </body>

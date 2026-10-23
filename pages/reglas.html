@@ -3,27 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reglas del Texas Hold'em paso a paso: ciegas, rondas de apuestas, flop, turn, river y showdown.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="BFRZ - Reglas del Texas Hold'em">
+    <link rel="icon" href="../images/as-picas.svg" type="image/svg+xml">
     <title>BFRZ - Reglas</title>
 </head>
-<body>
+<body id="arriba">
+
+    <a href="#contenido">Saltar al contenido</a>
 
     <header>
         <h1>Reglas del Texas Hold'em</h1>
         <marquee behavior="scroll" direction="left" scrollamount="6">Reglas del Texas Hold'em: de la ciega al showdown &#9829; Aprende paso a paso</marquee>
-        <nav>
-            <p>
-                <a href="../index.html">Inicio</a> |
-                <a href="reglas.html">Reglas</a> |
-                <a href="manos.html">Ranking de manos</a> |
-                <a href="torneos.html">Torneos</a> |
-                <a href="glosario.html">Glosario</a> |
-                <a href="historia.html">Historia y jugadores</a> |
-                <a href="ecuador.html">Poker en Ecuador</a>
-            </p>
+        <nav aria-label="Menú principal">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="reglas.html" aria-current="page">Reglas</a></li>
+                <li><a href="manos.html">Ranking de manos</a></li>
+                <li><a href="torneos.html">Torneos</a></li>
+                <li><a href="glosario.html">Glosario</a></li>
+                <li><a href="historia.html">Historia y jugadores</a></li>
+                <li><a href="ecuador.html">Póker en Ecuador</a></li>
+            </ul>
         </nav>
     </header>
 
-    <main>
+    <main id="contenido">
+
         <section>
             <h2>Cómo se juega una mano</h2>
             <p>Cada mano sigue siempre el mismo orden. Estos son los pasos, en secuencia:</p>
@@ -31,30 +38,50 @@
                 <li>Se colocan las <strong>ciegas</strong> (apuestas obligatorias) antes de repartir.</li>
                 <li>Se reparten 2 cartas boca abajo a cada jugador.</li>
                 <li>Primera ronda de apuestas (preflop).</li>
-                <li>Flop: se revelan 3 cartas comunitarias y se apuesta de nuevo.</li>
-                <li>Turn: se revela una cuarta carta comunitaria y se apuesta.</li>
-                <li>River: se revela la quinta carta comunitaria y se hace la última ronda de apuestas.</li>
-                <li>Showdown: los jugadores que quedan muestran sus cartas y gana la mejor mano.</li>
+                <li><strong>Flop:</strong> se revelan 3 cartas comunitarias y se apuesta de nuevo.</li>
+                <li><strong>Turn:</strong> se revela una cuarta carta comunitaria y se apuesta.</li>
+                <li><strong>River:</strong> se revela la quinta carta comunitaria y se hace la última ronda de apuestas.</li>
+                <li><strong>Showdown:</strong> los jugadores que quedan muestran sus cartas y gana la mejor mano.</li>
             </ol>
         </section>
 
         <article>
             <h2>Las acciones posibles</h2>
             <p>Durante cada ronda de apuestas, en tu turno puedes elegir una de estas acciones:</p>
-            <h3>Opciones de juego</h3>
-            <ul>
-                <li><strong>Pasar (check):</strong> no apuestas, pero sigues en la mano.</li>
-                <li><strong>Apostar (bet):</strong> pones fichas por primera vez en la ronda.</li>
-                <li><em>Igualar (call):</em> pones la misma cantidad que la apuesta actual.</li>
-                <li><em>Subir (raise):</em> aumentas la apuesta que ya estaba en la mesa.</li>
-                <li><em>Retirarse (fold):</em> abandonas la mano y pierdes lo apostado.</li>
-            </ul>
+            <dl>
+                <dt><strong>Pasar (check):</strong></dt>
+                <dd>no apuestas, pero sigues en la mano.</dd>
+                <dt><strong>Apostar (bet):</strong></dt>
+                <dd>pones fichas por primera vez en la ronda.</dd>
+                <dt><strong>Igualar (call):</strong></dt>
+                <dd>pones la misma cantidad que la apuesta actual.</dd>
+                <dt><strong>Subir (raise):</strong></dt>
+                <dd>aumentas la apuesta que ya estaba en la mesa.</dd>
+                <dt><strong>Retirarse (fold):</strong></dt>
+                <dd>abandonas la mano y pierdes lo apostado.</dd>
+            </dl>
         </article>
+
+        <section>
+            <h2>Preguntas frecuentes</h2>
+            <details>
+                <summary>¿Qué pasa si nadie apuesta en una ronda?</summary>
+                <p>Todos los jugadores pueden pasar (check) y la mano avanza a la siguiente carta comunitaria.</p>
+            </details>
+            <details>
+                <summary>¿Cuándo me conviene retirarme (fold)?</summary>
+                <p>Cuando tu mano es débil y la apuesta que te piden es más alta de lo que estás dispuesto a pagar.</p>
+            </details>
+            <details>
+                <summary>¿Qué es el showdown?</summary>
+                <p>Es el momento final de la mano: los jugadores que siguen en ella muestran sus cartas y se decide quién gana el bote.</p>
+            </details>
+        </section>
 
         <section>
             <h2>Imagen de referencia</h2>
             <figure>
-                <img src="../images/cartas.svg" alt="Tres cartas de póker en abanico: una reina de corazones, un rey de picas y un as de diamantes">
+                <img src="../images/cartas.svg" alt="Tres cartas de póker en abanico: una reina de corazones, un rey de picas y un as de diamantes" width="400" height="300" loading="lazy">
                 <figcaption>Tres cartas en abanico: la Q de corazones, la K de picas y la A de diamantes.</figcaption>
             </figure>
         </section>
@@ -69,12 +96,16 @@
             <h2>Siguientes pasos</h2>
             <p>Cuando tengas claras las reglas, revisa el <a href="manos.html">ranking de manos</a> para saber qué jugada vence a cuál.</p>
         </section>
+
     </main>
 
     <footer>
         <p>Desarrollado por: Brandon (BFRZ)</p>
-        <p>Correo: <a href="mailto:brandonfrz2006@gmail.com">brandonfrz2006@gmail.com</a></p>
-        <p>&copy; 2026 Todos los derechos reservados.</p>
+        <address>
+            Correo: <a href="mailto:brandonfrz2006@gmail.com">brandonfrz2006@gmail.com</a>
+        </address>
+        <p>&copy; <time datetime="2026">2026</time> Todos los derechos reservados.</p>
+        <p><a href="#arriba">Volver arriba</a></p>
     </footer>
 
 </body>

@@ -26,7 +26,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html _site/
-          cp -r pages images video _site/
+          cp -r pages images video audio _site/
 
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5

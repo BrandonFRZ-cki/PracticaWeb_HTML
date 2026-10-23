@@ -3,111 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BFRZ: aprende póker desde cero. Reglas del Texas Hold'em, ranking de manos, torneos, glosario, historia de los jugadores y el póker en Ecuador.">
+    <meta name="author" content="Brandon">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BFRZ - Aprende póker desde cero">
+    <meta property="og:description" content="Reglas, manos, torneos, glosario, historia y el póker en Ecuador, paso a paso.">
+    <meta property="og:url" content="https://brandonfrz-cki.github.io/PracticaWeb_HTML/">
+    <meta property="og:image" content="https://brandonfrz-cki.github.io/PracticaWeb_HTML/images/poster-video.png">
+    <meta property="og:locale" content="es_EC">
+    <link rel="icon" href="images/as-picas.svg" type="image/svg+xml">
     <title>BFRZ - Inicio</title>
 </head>
-<body>
+<body id="arriba">
+
+    <a href="#contenido">Saltar al contenido</a>
 
     <header>
         <h1>BFRZ</h1>
         <p><em>Brandon, creador de este sitio</em></p>
-        <marquee behavior="scroll" direction="left" scrollamount="6">&#9824; &#9829; &#9830; &#9827; Bienvenido a BFRZ: Bet, Fold, River, Zzz &#9824; &#9829; &#9830; &#9827; Aprende poker desde cero</marquee>
-        <nav>
-            <p>
-                <a href="index.html">Inicio</a> |
-                <a href="pages/reglas.html">Reglas</a> |
-                <a href="pages/manos.html">Ranking de manos</a> |
-                <a href="pages/torneos.html">Torneos</a> |
-                <a href="pages/glosario.html">Glosario</a> |
-                <a href="pages/historia.html">Historia y jugadores</a> |
-                <a href="pages/ecuador.html">Poker en Ecuador</a>
-            </p>
+        <marquee behavior="scroll" direction="left" scrollamount="6">&#9824; &#9829; &#9830; &#9827; Bienvenido a BFRZ: Bet, Fold, River, Zzz &#9824; &#9829; &#9830; &#9827; Aprende póker desde cero</marquee>
+        <nav aria-label="Menú principal">
+            <ul>
+                <li><a href="index.html" aria-current="page">Inicio</a></li>
+                <li><a href="pages/reglas.html">Reglas</a></li>
+                <li><a href="pages/manos.html">Ranking de manos</a></li>
+                <li><a href="pages/torneos.html">Torneos</a></li>
+                <li><a href="pages/glosario.html">Glosario</a></li>
+                <li><a href="pages/historia.html">Historia y jugadores</a></li>
+                <li><a href="pages/ecuador.html">Póker en Ecuador</a></li>
+            </ul>
         </nav>
     </header>
 
-    <main>
+    <main id="contenido">
+
         <section>
-            <h2>&#191;Qu&eacute; significa BFRZ?</h2>
-            <p>Las siglas resumen cuatro momentos de una mano de p&oacute;ker. Cada letra es una palabra en ingl&eacute;s que se usa en la mesa:</p>
-            <ul>
-                <li><strong>B</strong>: <em>Bet</em>, apostar fichas en la ronda.</li>
-                <li><strong>F</strong>: <em>Fold</em>, retirarte y dejar la mano.</li>
-                <li><strong>R</strong>: <em>River</em>, la quinta y &uacute;ltima carta comunitaria.</li>
-                <li><strong>Z</strong>: <em>Zzz</em>, el momento de descansar y observar cuando la mesa se vuelve lenta.</li>
-            </ul>
-            <p>Y s&iacute;, la Z tambi&eacute;n representa el sue&ntilde;o que da el jugador paciente que espera su buena mano.</p>
+            <h2>¿Qué significa BFRZ?</h2>
+            <p>Las siglas resumen cuatro momentos de una mano de póker. Cada letra es una palabra en inglés que se usa en la mesa:</p>
+            <dl>
+                <dt><strong>B</strong> (<em>Bet</em>)</dt>
+                <dd>Apostar fichas en la ronda.</dd>
+                <dt><strong>F</strong> (<em>Fold</em>)</dt>
+                <dd>Retirarte y dejar la mano.</dd>
+                <dt><strong>R</strong> (<em>River</em>)</dt>
+                <dd>La quinta y última carta comunitaria.</dd>
+                <dt><strong>Z</strong> (<em>Zzz</em>)</dt>
+                <dd>El momento de descansar y observar cuando la mesa se vuelve lenta.</dd>
+            </dl>
+            <p>Y sí, la Z también representa el sueño que da el jugador paciente que espera su buena mano.</p>
         </section>
 
         <section>
             <h2>Sobre el autor</h2>
-            <p>Este sitio fue creado por <strong>Brandon</strong> como pr&aacute;ctica de HTML5 para la materia de Programaci&oacute;n Web, usando &uacute;nicamente etiquetas HTML.</p>
+            <p>Este sitio fue creado por <strong>Brandon</strong> como práctica de HTML5 para la materia de Programación Web, usando únicamente etiquetas HTML.</p>
             <figure>
                 <a href="pages/reglas.html">
-                    <img src="images/fichas.svg" alt="Fichas de p&oacute;ker de colores apiladas">
+                    <img src="images/fichas.svg" alt="Fichas de póker de colores apiladas" width="200" height="200" loading="lazy">
                 </a>
                 <figcaption>Haz clic en las fichas para ir a las reglas del juego.</figcaption>
             </figure>
         </section>
 
         <section>
-            <h2>Escucha una canci&oacute;n</h2>
-            <audio controls src="audio/poker-face.mp3">
-                Tu navegador no soporta audio.
-        </audio>
+            <h2>Escucha una canción</h2>
+            <figure>
+                <audio controls preload="metadata">
+                    <source src="audio/poker-song.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+                <figcaption>Si el reproductor no funciona, puedes <a href="audio/poker-song.mp3" download>descargar el audio</a>.</figcaption>
+            </figure>
         </section>
 
         <section id="video">
             <h2>Video introductorio</h2>
-            <p>Un recorrido corto por una mano de Texas Hold'em. Activa los subt&iacute;tulos desde los controles del video.</p>
+            <p>Un recorrido corto por una mano de Texas Hold'em. Activa los subtítulos desde los controles del video.</p>
             <figure>
-                <video controls width="640" height="360" poster="images/poster-video.png">
+                <video controls preload="metadata" width="640" height="360" poster="images/poster-video.png">
                     <source src="video/poker-intro.mp4" type="video/mp4">
-                    <track kind="captions" src="video/poker-intro.vtt" srclang="es" label="Espa&ntilde;ol" default>
-                    Tu navegador no soporta la reproducci&oacute;n de video.
+                    <track kind="captions" src="video/poker-intro.vtt" srclang="es" label="Español" default>
+                    Tu navegador no soporta la reproducción de video.
                 </video>
                 <figcaption>Video de 20 segundos: reparto, flop, turn, river y escalera real.</figcaption>
             </figure>
+            <p>¿No se reproduce? <a href="video/poker-intro.mp4" download>Descarga el video (MP4)</a>.</p>
         </section>
 
         <article>
-            <h2>Tipos de p&oacute;ker</h2>
-            <p>Existen muchas variantes del p&oacute;ker. Las m&aacute;s populares son:</p>
+            <h2>Tipos de póker</h2>
+            <p>Existen muchas variantes del póker. Las más populares son:</p>
             <ul>
-                <li>Texas Hold'em: cada jugador recibe 2 cartas privadas y comparte 5 comunitarias.</li>
-                <li>Omaha: cada jugador recibe 4 cartas privadas y debe usar exactamente 2 de ellas.</li>
-                <li>Seven Card Stud: se juega con 7 cartas por jugador, algunas boca arriba.</li>
-                <li>Draw Poker: el jugador puede cambiar cartas de su mano antes de apostar.</li>
+                <li><strong>Texas Hold'em:</strong> cada jugador recibe 2 cartas privadas y comparte 5 comunitarias.</li>
+                <li><strong>Omaha:</strong> cada jugador recibe 4 cartas privadas y debe usar exactamente 2 de ellas.</li>
+                <li><strong>Seven Card Stud:</strong> se juega con 7 cartas por jugador, algunas boca arriba.</li>
+                <li><strong>Draw Poker:</strong> el jugador puede cambiar cartas de su mano antes de apostar.</li>
             </ul>
         </article>
 
         <section>
             <h2>La mesa de juego</h2>
             <figure>
-                <img src="images/mesa.svg" alt="Mesa de p&oacute;ker verde con borde de madera y fichas de colores alrededor">
+                <img src="images/mesa.svg" alt="Mesa de póker verde con borde de madera y fichas de colores alrededor" width="400" height="300" loading="lazy">
                 <figcaption>Una mesa de Texas Hold'em con seis jugadores.</figcaption>
             </figure>
         </section>
 
         <aside>
             <h3>Dato curioso</h3>
-            <p>La jugada m&aacute;s dif&iacute;cil de conseguir es la <strong>escalera real</strong>, pero su probabilidad aproximada es de solo 0,00015 %.</p>
+            <p>La jugada más difícil de conseguir es la <strong>escalera real</strong>, pero su probabilidad aproximada es de solo 0,00015 %.</p>
         </aside>
 
         <section>
             <h2>Explora el sitio</h2>
-            <p>Estas son las secciones con m&aacute;s contenido:</p>
+            <p>Estas son las secciones con más contenido:</p>
             <ul>
-                <li><a href="pages/historia.html">Historia del p&oacute;ker y jugadores famosos</a></li>
-                <li><a href="pages/ecuador.html">El p&oacute;ker en Ecuador</a></li>
+                <li><a href="pages/historia.html">Historia del póker y jugadores famosos</a></li>
+                <li><a href="pages/ecuador.html">El póker en Ecuador</a></li>
                 <li><a href="pages/manos.html">Ranking completo de manos</a></li>
                 <li><a href="pages/torneos.html">Estructura de los torneos</a></li>
             </ul>
         </section>
+
     </main>
 
     <footer>
         <p>Desarrollado por: Brandon (BFRZ)</p>
-        <p>Correo: <a href="mailto:brandonfrz2006@gmail.com">brandonfrz2006@gmail.com</a></p>
-        <p>&copy; 2026 Todos los derechos reservados.</p>
+        <address>
+            Correo: <a href="mailto:brandonfrz2006@gmail.com">brandonfrz2006@gmail.com</a>
+        </address>
+        <p>&copy; <time datetime="2026">2026</time> Todos los derechos reservados.</p>
+        <p><a href="#arriba">Volver arriba</a></p>
     </footer>
 
 </body>

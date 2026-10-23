@@ -3,27 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cómo funcionan los torneos de póker: tipos (freezeout, re-entry, rebuy, bounty) y una estructura de ciegas de ejemplo.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="BFRZ - Torneos y estructura de apuestas">
+    <link rel="icon" href="../images/as-picas.svg" type="image/svg+xml">
     <title>BFRZ - Torneos</title>
 </head>
-<body>
+<body id="arriba">
+
+    <a href="#contenido">Saltar al contenido</a>
 
     <header>
         <h1>Torneos y estructura de apuestas</h1>
         <marquee behavior="scroll" direction="left" scrollamount="6">Niveles de ciegas que suben cada 20 minutos &#9827; Freezeout, Re-entry, Rebuy y Bounty</marquee>
-        <nav>
-            <p>
-                <a href="../index.html">Inicio</a> |
-                <a href="reglas.html">Reglas</a> |
-                <a href="manos.html">Ranking de manos</a> |
-                <a href="torneos.html">Torneos</a> |
-                <a href="glosario.html">Glosario</a> |
-                <a href="historia.html">Historia y jugadores</a> |
-                <a href="ecuador.html">Poker en Ecuador</a>
-            </p>
+        <nav aria-label="Menú principal">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="reglas.html">Reglas</a></li>
+                <li><a href="manos.html">Ranking de manos</a></li>
+                <li><a href="torneos.html" aria-current="page">Torneos</a></li>
+                <li><a href="glosario.html">Glosario</a></li>
+                <li><a href="historia.html">Historia y jugadores</a></li>
+                <li><a href="ecuador.html">Póker en Ecuador</a></li>
+            </ul>
         </nav>
     </header>
 
-    <main>
+    <main id="contenido">
+
         <section>
             <h2>Qué es un torneo</h2>
             <p>En un torneo todos los jugadores pagan una <strong>cuota de entrada</strong> y reciben la misma cantidad de fichas.<br>
@@ -33,12 +40,16 @@
         <article>
             <h2>Tipos de torneo</h2>
             <p>Estas son las modalidades más comunes:</p>
-            <ul>
-                <li>Freezeout: solo se permite una compra de fichas; si pierdes todo, quedas eliminado.</li>
-                <li>Re-entry: puedes volver a entrar al torneo después de quedarte sin fichas.</li>
-                <li>Rebuy: durante un periodo inicial puedes comprar fichas adicionales.</li>
-                <li>Bounty: cada eliminación te da una recompensa adicional.</li>
-            </ul>
+            <dl>
+                <dt><strong>Freezeout:</strong></dt>
+                <dd>solo se permite una compra de fichas; si pierdes todo, quedas eliminado.</dd>
+                <dt><strong>Re-entry:</strong></dt>
+                <dd>puedes volver a entrar al torneo después de quedarte sin fichas.</dd>
+                <dt><strong>Rebuy:</strong></dt>
+                <dd>durante un periodo inicial puedes comprar fichas adicionales.</dd>
+                <dt><strong>Bounty:</strong></dt>
+                <dd>cada eliminación te da una recompensa adicional.</dd>
+            </dl>
         </article>
 
         <section>
@@ -48,44 +59,44 @@
                 <caption>Niveles de ciegas (valores de referencia)</caption>
                 <thead>
                     <tr>
-                        <th>Nivel</th>
-                        <th>Ciega pequeña</th>
-                        <th>Ciega grande</th>
-                        <th>Ante</th>
-                        <th>Duración</th>
+                        <th scope="col">Nivel</th>
+                        <th scope="col">Ciega pequeña</th>
+                        <th scope="col">Ciega grande</th>
+                        <th scope="col">Ante</th>
+                        <th scope="col">Duración</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1</td>
+                        <th scope="row">1</th>
                         <td>25</td>
                         <td>50</td>
                         <td>0</td>
                         <td>20 min</td>
                     </tr>
                     <tr>
-                        <td>2</td>
+                        <th scope="row">2</th>
                         <td>50</td>
                         <td>100</td>
                         <td>0</td>
                         <td>20 min</td>
                     </tr>
                     <tr>
-                        <td>3</td>
+                        <th scope="row">3</th>
                         <td>75</td>
                         <td>150</td>
                         <td>15</td>
                         <td>20 min</td>
                     </tr>
                     <tr>
-                        <td>4</td>
+                        <th scope="row">4</th>
                         <td>100</td>
                         <td>200</td>
                         <td>25</td>
                         <td>20 min</td>
                     </tr>
                     <tr>
-                        <td>5</td>
+                        <th scope="row">5</th>
                         <td>150</td>
                         <td>300</td>
                         <td>50</td>
@@ -98,7 +109,7 @@
         <section>
             <h2>Premio para el campeón</h2>
             <figure>
-                <img src="../images/trofeo.svg" alt="Trofeo dorado de campeón sobre una base de madera">
+                <img src="../images/trofeo.svg" alt="Trofeo dorado de campeón sobre una base de madera" width="200" height="200" loading="lazy">
                 <figcaption>El trofeo del <strong>campeón</strong> del torneo.</figcaption>
             </figure>
         </section>
@@ -107,12 +118,16 @@
             <h3>Consejo</h3>
             <p><em>Juega con paciencia al principio.</em> Los primeros niveles tienen ciegas bajas, así que conviene observar a los demás jugadores antes de arriesgar fichas.</p>
         </aside>
+
     </main>
 
     <footer>
         <p>Desarrollado por: Brandon (BFRZ)</p>
-        <p>Correo: <a href="mailto:brandonfrz2006@gmail.com">brandonfrz2006@gmail.com</a></p>
-        <p>&copy; 2026 Todos los derechos reservados.</p>
+        <address>
+            Correo: <a href="mailto:brandonfrz2006@gmail.com">brandonfrz2006@gmail.com</a>
+        </address>
+        <p>&copy; <time datetime="2026">2026</time> Todos los derechos reservados.</p>
+        <p><a href="#arriba">Volver arriba</a></p>
     </footer>
 
 </body>
