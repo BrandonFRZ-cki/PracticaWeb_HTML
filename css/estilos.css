@@ -1,18 +1,4 @@
-/* ==========================================================================
-   BFRZ - Hoja de estilos principal (css/estilos.css)
-   Paleta del proyecto:
-     #ffffff  blanco      -> títulos y texto destacado
-     #e6e6e6  gris claro  -> texto general
-     #000000  negro       -> fondo general y campos de formulario
-     #333333  gris oscuro -> cabecera, tarjetas y pie
-     #d4af37  dorado      -> acentos, bordes, enlaces y botones
-   Archivo externo enlazado desde todas las páginas (también contacto).
-   ========================================================================== */
-
-
-/* --------------------------------------------------------------------------
-   1. Variables de color y tipografía (tokens)
-   -------------------------------------------------------------------------- */
+/* Variables de color */
 :root {
     --blanco: #ffffff;
     --gris-claro: #e6e6e6;
@@ -23,12 +9,7 @@
     --fuente-ui: Helvetica, Arial, sans-serif;
 }
 
-
-/* --------------------------------------------------------------------------
-   2. Base y herencia
-   body define la tipografía y el color generales; los elementos internos
-   los heredan salvo que un componente los sobrescriba (ver .destacado).
-   -------------------------------------------------------------------------- */
+/* Base y herencia */
 body {
     font-family: var(--fuente-texto);
     font-size: 1rem;
@@ -41,10 +22,7 @@ body {
     min-height: 100vh;
 }
 
-
-/* --------------------------------------------------------------------------
-   3. Tipografía: títulos, subtítulos y párrafos
-   -------------------------------------------------------------------------- */
+/* Títulos y textos */
 h1,
 h2,
 h3 {
@@ -93,10 +71,7 @@ em {
     color: var(--gris-claro);
 }
 
-
-/* --------------------------------------------------------------------------
-   4. Enlace de salto (accesibilidad): oculto hasta recibir el foco
-   -------------------------------------------------------------------------- */
+/* Enlace de salto */
 .saltar {
     position: absolute;
     left: -9999px;
@@ -113,10 +88,7 @@ em {
     z-index: 10;
 }
 
-
-/* --------------------------------------------------------------------------
-   5. Cabecera (display: flex en columna, centrada)
-   -------------------------------------------------------------------------- */
+/* Cabecera */
 header {
     display: flex;
     flex-direction: column;
@@ -136,15 +108,14 @@ header em {
     margin: 0.3rem 0 0 0;
 }
 
+/* Logo */
 img.logo {
-    width: 130px;
-    height: auto;
-    padding: 0.5rem;
-    border: 2px solid var(--dorado);
-    border-radius: 12px;
-    background-color: var(--gris-claro);
+    width: 300px;
+    height: 300px;
+
 }
 
+/* Marquesina */
 marquee {
     font-family: var(--fuente-ui);
     font-size: 0.9rem;
@@ -155,11 +126,7 @@ marquee {
     width: 100%;
 }
 
-
-/* --------------------------------------------------------------------------
-   6. Distribución en dos columnas: menú (izquierda) y contenido (derecha)
-   El contenedor se centra con márgenes laterales automáticos.
-   -------------------------------------------------------------------------- */
+/* Dos columnas: menú y contenido */
 .cuerpo {
     display: flex;
     flex-direction: row;
@@ -177,11 +144,7 @@ marquee {
     scroll-margin-top: 1rem;
 }
 
-
-/* --------------------------------------------------------------------------
-   7. Navegación: lista sin viñetas, enlaces como bloques con relleno,
-      fondo y bordes; estados :hover, :active y página actual
-   -------------------------------------------------------------------------- */
+/* Navegación */
 nav {
     flex: 0 0 240px;
     position: sticky;
@@ -228,10 +191,7 @@ nav a[aria-current="page"] {
     border-color: var(--blanco);
 }
 
-
-/* --------------------------------------------------------------------------
-   8. Contenido principal: tarjetas distribuidas con flex-wrap
-   -------------------------------------------------------------------------- */
+/* Contenido principal */
 main {
     flex: 1 1 0;
     min-width: 0;
@@ -241,7 +201,7 @@ main {
     align-content: flex-start;
 }
 
-/* Clase reutilizable: se aplica a varias secciones y artículos */
+/* Tarjetas */
 .tarjeta {
     flex: 1 1 300px;
     background-color: var(--gris-oscuro);
@@ -253,15 +213,12 @@ main {
     box-sizing: border-box;
 }
 
-/* Las tarjetas con tablas ocupan todo el ancho */
 main > section.tarjeta:has(table),
 main > article.tarjeta:has(table) {
     flex-basis: 100%;
 }
 
-/* Clase reutilizable para el recuadro destacado (aside).
-   Sobrescribe la herencia: body da color gris claro, aquí se usa negro
-   sobre dorado para mantener el contraste de lectura. */
+/* Recuadro destacado */
 .destacado {
     flex: 1 1 300px;
     background-color: var(--dorado);
@@ -283,10 +240,7 @@ main > article.tarjeta:has(table) {
     border-left-color: var(--blanco);
 }
 
-
-/* --------------------------------------------------------------------------
-   9. Imágenes, figuras y multimedia
-   -------------------------------------------------------------------------- */
+/* Imágenes y figuras */
 img {
     max-width: 100%;
     height: auto;
@@ -308,7 +262,6 @@ img {
     background-color: var(--gris-oscuro);
 }
 
-/* Imagen que funciona como enlace */
 .figura a {
     display: inline-block;
     border: none;
@@ -338,10 +291,7 @@ video {
     background-color: var(--negro);
 }
 
-
-/* --------------------------------------------------------------------------
-   10. Listas de contenido (diferentes del menú)
-   -------------------------------------------------------------------------- */
+/* Listas */
 main ul {
     list-style-type: square;
     padding-left: 1.2rem;
@@ -377,10 +327,7 @@ dd {
     color: var(--gris-claro);
 }
 
-
-/* --------------------------------------------------------------------------
-   11. Enlaces dentro del contenido
-   -------------------------------------------------------------------------- */
+/* Enlaces del contenido */
 main a {
     color: var(--dorado);
     font-weight: 700;
@@ -400,10 +347,7 @@ main a:focus {
     outline-offset: 2px;
 }
 
-
-/* --------------------------------------------------------------------------
-   12. Tablas: border-collapse, bordes, relleno y encabezados diferenciados
-   -------------------------------------------------------------------------- */
+/* Tablas */
 table {
     border-collapse: collapse;
     width: 100%;
@@ -449,10 +393,7 @@ tbody tr:nth-child(even) td {
     background-color: var(--gris-oscuro);
 }
 
-
-/* --------------------------------------------------------------------------
-   13. Detalles desplegables
-   -------------------------------------------------------------------------- */
+/* Desplegables */
 details {
     background-color: var(--negro);
     border: 1px solid var(--dorado);
@@ -475,11 +416,7 @@ details p {
     margin: 0.5rem 0 0 0;
 }
 
-
-/* --------------------------------------------------------------------------
-   14. Formulario de contacto: fieldset/legend, etiquetas en bloque,
-       separación entre campos, relleno y estado :focus
-   -------------------------------------------------------------------------- */
+/* Formulario de contacto */
 fieldset {
     border: 1px solid var(--dorado);
     border-radius: 6px;
@@ -569,10 +506,7 @@ textarea:focus {
     outline-offset: 2px;
 }
 
-
-/* --------------------------------------------------------------------------
-   15. Pie de página: va después del contenido, sin superponerse
-   -------------------------------------------------------------------------- */
+/* Pie de página */
 footer {
     display: flex;
     flex-wrap: wrap;
@@ -601,10 +535,7 @@ footer a:active {
     color: var(--blanco);
 }
 
-
-/* --------------------------------------------------------------------------
-   16. Diseño adaptable (responsive)
-   -------------------------------------------------------------------------- */
+/* Diseño adaptable */
 @media (max-width: 800px) {
     .cuerpo {
         flex-direction: column;
