@@ -8,14 +8,19 @@
     <meta property="og:title" content="BFRZ - Reglas del Texas Hold'em">
     <link rel="icon" href="../images/as-picas.svg" type="image/svg+xml">
     <title>BFRZ - Reglas</title>
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body id="arriba">
 
-    <a href="#contenido">Saltar al contenido</a>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
 
     <header>
+        <img class="logo" src="../images/Logo/BFRZ_Logo_FondoNegro_Transparente.png" alt="Logotipo de BFRZ" width="130" height="130">
         <h1>Reglas del Texas Hold'em</h1>
         <marquee behavior="scroll" direction="left" scrollamount="6">Reglas del Texas Hold'em: de la ciega al showdown &#9829; Aprende paso a paso</marquee>
+    </header>
+
+    <div class="cuerpo">
         <nav aria-label="Menú principal">
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
@@ -26,13 +31,12 @@
                 <li><a href="historia.html">Historia y jugadores</a></li>
                 <li><a href="ranking-jugadores.html">Ranking de jugadores</a></li>
                 <li><a href="ecuador.html">Póker en Ecuador</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
-    </header>
-
     <main id="contenido">
 
-        <section>
+        <section class="tarjeta">
             <h2>Cómo se juega una mano</h2>
             <p>Cada mano sigue siempre el mismo orden. Estos son los pasos, en secuencia:</p>
             <ol>
@@ -46,7 +50,7 @@
             </ol>
         </section>
 
-        <article>
+        <article class="tarjeta">
             <h2>Las acciones posibles</h2>
             <p>Durante cada ronda de apuestas, en tu turno puedes elegir una de estas acciones:</p>
             <dl>
@@ -63,7 +67,7 @@
             </dl>
         </article>
 
-        <section>
+        <section class="tarjeta">
             <h2>Preguntas frecuentes</h2>
             <details>
                 <summary>¿Qué pasa si nadie apuesta en una ronda?</summary>
@@ -79,26 +83,27 @@
             </details>
         </section>
 
-        <section>
+        <section class="tarjeta">
             <h2>Imagen de referencia</h2>
-            <figure>
+            <figure class="figura">
                 <img src="../images/cartas.svg" alt="Tres cartas de póker en abanico: una reina de corazones, un rey de picas y un as de diamantes" width="400" height="300" loading="lazy">
                 <figcaption>Tres cartas en abanico: la Q de corazones, la K de picas y la A de diamantes.</figcaption>
             </figure>
         </section>
 
-        <aside>
+        <aside class="destacado">
             <h3>Consejo para principiantes</h3>
             <p>Antes de apostar, pregúntate siempre:<br>
             ¿Qué tan fuerte es mi mano? ¿Cuántas fichas me cuesta seguir en la mano?</p>
         </aside>
 
-        <section>
+        <section class="tarjeta">
             <h2>Siguientes pasos</h2>
             <p>Cuando tengas claras las reglas, revisa el <a href="manos.html">ranking de manos</a> para saber qué jugada vence a cuál.</p>
         </section>
 
     </main>
+    </div>
 
     <footer>
         <p>Desarrollado por: Brandon (BFRZ)</p>

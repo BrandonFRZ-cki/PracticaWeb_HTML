@@ -1,0 +1,644 @@
+/* ==========================================================================
+   BFRZ - Hoja de estilos principal (css/estilos.css)
+   Paleta del proyecto:
+     #ffffff  blanco      -> títulos y texto destacado
+     #e6e6e6  gris claro  -> texto general
+     #000000  negro       -> fondo general y campos de formulario
+     #333333  gris oscuro -> cabecera, tarjetas y pie
+     #d4af37  dorado      -> acentos, bordes, enlaces y botones
+   Archivo externo enlazado desde todas las páginas (también contacto).
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   1. Variables de color y tipografía (tokens)
+   -------------------------------------------------------------------------- */
+:root {
+    --blanco: #ffffff;
+    --gris-claro: #e6e6e6;
+    --negro: #000000;
+    --gris-oscuro: #333333;
+    --dorado: #d4af37;
+    --fuente-texto: Georgia, "Times New Roman", serif;
+    --fuente-ui: Helvetica, Arial, sans-serif;
+}
+
+
+/* --------------------------------------------------------------------------
+   2. Base y herencia
+   body define la tipografía y el color generales; los elementos internos
+   los heredan salvo que un componente los sobrescriba (ver .destacado).
+   -------------------------------------------------------------------------- */
+body {
+    font-family: var(--fuente-texto);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--gris-claro);
+    background-color: var(--negro);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/* --------------------------------------------------------------------------
+   3. Tipografía: títulos, subtítulos y párrafos
+   -------------------------------------------------------------------------- */
+h1,
+h2,
+h3 {
+    font-family: var(--fuente-texto);
+    line-height: 1.25;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--blanco);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.2rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--dorado);
+    border-bottom: 2px solid var(--gris-oscuro);
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.8rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--blanco);
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0 0 0.8rem 0;
+}
+
+strong {
+    font-weight: 700;
+    color: var(--blanco);
+}
+
+em {
+    font-style: italic;
+    color: var(--gris-claro);
+}
+
+
+/* --------------------------------------------------------------------------
+   4. Enlace de salto (accesibilidad): oculto hasta recibir el foco
+   -------------------------------------------------------------------------- */
+.saltar {
+    position: absolute;
+    left: -9999px;
+}
+
+.saltar:focus {
+    left: 1rem;
+    top: 1rem;
+    background-color: var(--dorado);
+    color: var(--negro);
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+
+/* --------------------------------------------------------------------------
+   5. Cabecera (display: flex en columna, centrada)
+   -------------------------------------------------------------------------- */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--negro);
+    padding: 1.5rem 1rem;
+    border-bottom: 4px solid var(--dorado);
+}
+
+header p,
+header em {
+    font-family: var(--fuente-ui);
+    font-size: 1rem;
+    color: var(--gris-claro);
+    margin: 0.3rem 0 0 0;
+}
+
+img.logo {
+    width: 130px;
+    height: auto;
+    padding: 0.5rem;
+    border: 2px solid var(--dorado);
+    border-radius: 12px;
+    background-color: var(--gris-claro);
+}
+
+marquee {
+    font-family: var(--fuente-ui);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--negro);
+    background-color: var(--dorado);
+    padding: 0.3rem 0;
+    width: 100%;
+}
+
+
+/* --------------------------------------------------------------------------
+   6. Distribución en dos columnas: menú (izquierda) y contenido (derecha)
+   El contenedor se centra con márgenes laterales automáticos.
+   -------------------------------------------------------------------------- */
+.cuerpo {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+    flex: 1 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+
+#contenido {
+    scroll-margin-top: 1rem;
+}
+
+
+/* --------------------------------------------------------------------------
+   7. Navegación: lista sin viñetas, enlaces como bloques con relleno,
+      fondo y bordes; estados :hover, :active y página actual
+   -------------------------------------------------------------------------- */
+nav {
+    flex: 0 0 240px;
+    position: sticky;
+    top: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    font-family: var(--fuente-ui);
+    font-size: 0.95rem;
+    color: var(--gris-claro);
+    text-decoration: none;
+    background-color: var(--gris-oscuro);
+    padding: 0.6rem 0.9rem;
+    border: 2px solid var(--dorado);
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: var(--dorado);
+    color: var(--negro);
+}
+
+nav a:active {
+    background-color: var(--blanco);
+    color: var(--negro);
+    transform: translateX(3px);
+}
+
+nav a[aria-current="page"] {
+    background-color: var(--dorado);
+    color: var(--negro);
+    font-weight: 700;
+    border-color: var(--blanco);
+}
+
+
+/* --------------------------------------------------------------------------
+   8. Contenido principal: tarjetas distribuidas con flex-wrap
+   -------------------------------------------------------------------------- */
+main {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-content: flex-start;
+}
+
+/* Clase reutilizable: se aplica a varias secciones y artículos */
+.tarjeta {
+    flex: 1 1 300px;
+    background-color: var(--gris-oscuro);
+    border-left: 4px solid var(--dorado);
+    border-radius: 8px;
+    padding: 1.2rem 1.4rem;
+    margin: 0;
+    box-shadow: 0 2px 10px rgba(212, 175, 55, 0.15);
+    box-sizing: border-box;
+}
+
+/* Las tarjetas con tablas ocupan todo el ancho */
+main > section.tarjeta:has(table),
+main > article.tarjeta:has(table) {
+    flex-basis: 100%;
+}
+
+/* Clase reutilizable para el recuadro destacado (aside).
+   Sobrescribe la herencia: body da color gris claro, aquí se usa negro
+   sobre dorado para mantener el contraste de lectura. */
+.destacado {
+    flex: 1 1 300px;
+    background-color: var(--dorado);
+    color: var(--negro);
+    border-left: 6px solid var(--blanco);
+    border-radius: 8px;
+    padding: 1.2rem 1.4rem;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.destacado h3,
+.destacado p,
+.destacado strong {
+    color: var(--negro);
+}
+
+#video {
+    border-left-color: var(--blanco);
+}
+
+
+/* --------------------------------------------------------------------------
+   9. Imágenes, figuras y multimedia
+   -------------------------------------------------------------------------- */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.figura {
+    margin: 0.5rem auto;
+    padding: 0;
+    text-align: center;
+}
+
+.figura img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    padding: 0.4rem;
+    border: 3px solid var(--dorado);
+    border-radius: 6px;
+    background-color: var(--gris-oscuro);
+}
+
+/* Imagen que funciona como enlace */
+.figura a {
+    display: inline-block;
+    border: none;
+}
+
+.figura a:hover img,
+.figura a:focus img {
+    border-color: var(--blanco);
+    opacity: 0.85;
+}
+
+figcaption {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--gris-claro);
+    margin-top: 0.4rem;
+}
+
+audio,
+video {
+    display: block;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    border: 2px solid var(--dorado);
+    border-radius: 6px;
+    background-color: var(--negro);
+}
+
+
+/* --------------------------------------------------------------------------
+   10. Listas de contenido (diferentes del menú)
+   -------------------------------------------------------------------------- */
+main ul {
+    list-style-type: square;
+    padding-left: 1.2rem;
+    margin: 0 0 0.8rem 0;
+}
+
+main ol {
+    list-style-type: decimal;
+    padding-left: 1.6rem;
+    margin: 0 0 0.8rem 0;
+}
+
+main li {
+    margin-bottom: 0.4rem;
+}
+
+main li::marker {
+    color: var(--dorado);
+}
+
+dl {
+    margin: 0 0 0.8rem 0;
+}
+
+dt {
+    font-weight: 700;
+    color: var(--blanco);
+    margin-top: 0.6rem;
+}
+
+dd {
+    margin: 0 0 0.3rem 1.5rem;
+    color: var(--gris-claro);
+}
+
+
+/* --------------------------------------------------------------------------
+   11. Enlaces dentro del contenido
+   -------------------------------------------------------------------------- */
+main a {
+    color: var(--dorado);
+    font-weight: 700;
+}
+
+main a:hover {
+    color: var(--blanco);
+    text-decoration: underline;
+}
+
+main a:active {
+    color: var(--gris-claro);
+}
+
+main a:focus {
+    outline: 3px solid var(--dorado);
+    outline-offset: 2px;
+}
+
+
+/* --------------------------------------------------------------------------
+   12. Tablas: border-collapse, bordes, relleno y encabezados diferenciados
+   -------------------------------------------------------------------------- */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+caption {
+    font-weight: 700;
+    color: var(--dorado);
+    padding: 0.5rem 0;
+    text-align: left;
+}
+
+th,
+td {
+    border: 1px solid var(--negro);
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+td {
+    color: var(--gris-claro);
+    background-color: var(--negro);
+}
+
+th {
+    background-color: var(--dorado);
+    color: var(--negro);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+tbody th {
+    background-color: var(--gris-oscuro);
+    color: var(--blanco);
+}
+
+tbody tr:nth-child(even) td {
+    background-color: var(--gris-oscuro);
+}
+
+
+/* --------------------------------------------------------------------------
+   13. Detalles desplegables
+   -------------------------------------------------------------------------- */
+details {
+    background-color: var(--negro);
+    border: 1px solid var(--dorado);
+    border-radius: 6px;
+    padding: 0.6rem 0.9rem;
+    margin-bottom: 0.6rem;
+}
+
+summary {
+    font-weight: 700;
+    color: var(--dorado);
+    cursor: pointer;
+}
+
+summary:hover {
+    color: var(--blanco);
+}
+
+details p {
+    margin: 0.5rem 0 0 0;
+}
+
+
+/* --------------------------------------------------------------------------
+   14. Formulario de contacto: fieldset/legend, etiquetas en bloque,
+       separación entre campos, relleno y estado :focus
+   -------------------------------------------------------------------------- */
+fieldset {
+    border: 1px solid var(--dorado);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 0 0 1.2rem 0;
+}
+
+legend {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--dorado);
+    padding: 0 0.5rem;
+}
+
+label {
+    display: block;
+    font-family: var(--fuente-ui);
+    font-weight: 700;
+    color: var(--blanco);
+    margin-bottom: 0.4rem;
+}
+
+.campo {
+    margin-bottom: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.7rem 0.8rem;
+    font-family: var(--fuente-ui);
+    font-size: 1rem;
+    color: var(--blanco);
+    background-color: var(--negro);
+    border: 1px solid var(--gris-claro);
+    border-radius: 4px;
+}
+
+textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--gris-claro);
+    opacity: 0.6;
+}
+
+input:focus,
+textarea:focus {
+    outline: 3px solid var(--dorado);
+    outline-offset: 2px;
+    border-color: var(--dorado);
+    background-color: var(--gris-oscuro);
+}
+
+.boton {
+    display: inline-block;
+    font-family: var(--fuente-ui);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--negro);
+    background-color: var(--dorado);
+    border: 2px solid var(--dorado);
+    border-radius: 6px;
+    padding: 0.7rem 1.4rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.boton:hover {
+    background-color: var(--blanco);
+    border-color: var(--blanco);
+}
+
+.boton:active {
+    background-color: var(--gris-claro);
+    transform: translateY(1px);
+}
+
+.boton:focus {
+    outline: 3px solid var(--blanco);
+    outline-offset: 2px;
+}
+
+
+/* --------------------------------------------------------------------------
+   15. Pie de página: va después del contenido, sin superponerse
+   -------------------------------------------------------------------------- */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem 1.5rem;
+    background-color: var(--gris-oscuro);
+    color: var(--gris-claro);
+    padding: 1.2rem 1.5rem;
+    border-top: 4px solid var(--dorado);
+    font-size: 0.9rem;
+}
+
+footer p,
+footer address {
+    margin: 0;
+    font-style: normal;
+}
+
+footer a {
+    color: var(--dorado);
+}
+
+footer a:hover,
+footer a:active {
+    color: var(--blanco);
+}
+
+
+/* --------------------------------------------------------------------------
+   16. Diseño adaptable (responsive)
+   -------------------------------------------------------------------------- */
+@media (max-width: 800px) {
+    .cuerpo {
+        flex-direction: column;
+    }
+
+    nav {
+        flex-basis: auto;
+        width: 100%;
+        position: static;
+    }
+
+    nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    main {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .tarjeta,
+    .destacado {
+        flex-basis: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}

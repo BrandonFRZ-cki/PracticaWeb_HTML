@@ -13,15 +13,20 @@
     <meta property="og:locale" content="es_EC">
     <link rel="icon" href="images/as-picas.svg" type="image/svg+xml">
     <title>BFRZ - Inicio</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body id="arriba">
 
-    <a href="#contenido">Saltar al contenido</a>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
 
     <header>
+        <img class="logo" src="images/Logo/BFRZ_Logo_FondoNegro_Transparente.png" alt="Logotipo de BFRZ" width="130" height="130">
         <h1>BFRZ</h1>
         <p><em>Brandon, creador de este sitio</em></p>
         <marquee behavior="scroll" direction="left" scrollamount="6">&#9824; &#9829; &#9830; &#9827; Bienvenido a BFRZ: Bet, Fold, River, Zzz &#9824; &#9829; &#9830; &#9827; Aprende póker desde cero</marquee>
+    </header>
+
+    <div class="cuerpo">
         <nav aria-label="Menú principal">
             <ul>
                 <li><a href="index.html" aria-current="page">Inicio</a></li>
@@ -32,13 +37,12 @@
                 <li><a href="pages/historia.html">Historia y jugadores</a></li>
                 <li><a href="pages/ranking-jugadores.html">Ranking de jugadores</a></li>
                 <li><a href="pages/ecuador.html">Póker en Ecuador</a></li>
+                <li><a href="pages/contacto.html">Contacto</a></li>
             </ul>
         </nav>
-    </header>
-
     <main id="contenido">
 
-        <section>
+        <section class="tarjeta">
             <h2>¿Qué significa BFRZ?</h2>
             <p>Las siglas resumen cuatro momentos de una mano de póker. Cada letra es una palabra en inglés que se usa en la mesa:</p>
             <dl>
@@ -54,10 +58,10 @@
             <p>Y sí, la Z también representa el sueño que da el jugador paciente que espera su buena mano.</p>
         </section>
 
-        <section>
+        <section class="tarjeta">
             <h2>Sobre el autor</h2>
             <p>Este sitio fue creado por <strong>Brandon</strong> como práctica de HTML5 para la materia de Programación Web, usando únicamente etiquetas HTML.</p>
-            <figure>
+            <figure class="figura">
                 <a href="pages/reglas.html">
                     <img src="images/fichas.svg" alt="Fichas de póker de colores apiladas" width="200" height="200" loading="lazy">
                 </a>
@@ -65,9 +69,9 @@
             </figure>
         </section>
 
-        <section>
+        <section class="tarjeta">
             <h2>Escucha una canción</h2>
-            <figure>
+            <figure class="figura">
                 <audio controls preload="metadata">
                     <source src="audio/poker-song.mp3" type="audio/mpeg">
                     Tu navegador no soporta el elemento de audio.
@@ -76,10 +80,10 @@
             </figure>
         </section>
 
-        <section id="video">
+        <section id="video" class="tarjeta">
             <h2>Video introductorio</h2>
             <p>Un recorrido corto por una mano de Texas Hold'em. Activa los subtítulos desde los controles del video.</p>
-            <figure>
+            <figure class="figura">
                 <video controls preload="metadata" width="640" height="360" poster="images/poster-video.png">
                     <source src="video/poker-intro.mp4" type="video/mp4">
                     <track kind="captions" src="video/poker-intro.vtt" srclang="es" label="Español" default>
@@ -90,7 +94,7 @@
             <p>¿No se reproduce? <a href="video/poker-intro.mp4" download>Descarga el video (MP4)</a>.</p>
         </section>
 
-        <article>
+        <article class="tarjeta">
             <h2>Tipos de póker</h2>
             <p>Existen muchas variantes del póker. Las más populares son:</p>
             <ul>
@@ -101,20 +105,20 @@
             </ul>
         </article>
 
-        <section>
+        <section class="tarjeta">
             <h2>La mesa de juego</h2>
-            <figure>
+            <figure class="figura">
                 <img src="images/mesa.svg" alt="Mesa de póker verde con borde de madera y fichas de colores alrededor" width="400" height="300" loading="lazy">
                 <figcaption>Una mesa de Texas Hold'em con seis jugadores.</figcaption>
             </figure>
         </section>
 
-        <aside>
+        <aside class="destacado">
             <h3>Dato curioso</h3>
             <p>La jugada más difícil de conseguir es la <strong>escalera real</strong>, pero su probabilidad aproximada es de solo 0,00015 %.</p>
         </aside>
 
-        <section>
+        <section class="tarjeta">
             <h2>Explora el sitio</h2>
             <p>Estas son las secciones con más contenido:</p>
             <ul>
@@ -126,6 +130,7 @@
         </section>
 
     </main>
+    </div>
 
     <footer>
         <p>Desarrollado por: Brandon (BFRZ)</p>

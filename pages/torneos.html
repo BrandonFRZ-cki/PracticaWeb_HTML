@@ -7,15 +7,20 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="BFRZ - Torneos y estructura de apuestas">
     <link rel="icon" href="../images/as-picas.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/estilos.css">
     <title>BFRZ - Torneos</title>
 </head>
 <body id="arriba">
 
-    <a href="#contenido">Saltar al contenido</a>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
 
     <header>
+        <img class="logo" src="../images/Logo/BFRZ_Logo_FondoNegro_Transparente.png" alt="Logotipo de BFRZ" width="130" height="130">
         <h1>Torneos y estructura de apuestas</h1>
         <marquee behavior="scroll" direction="left" scrollamount="6">Niveles de ciegas que suben cada 20 minutos &#9827; Freezeout, Re-entry, Rebuy y Bounty</marquee>
+    </header>
+
+    <div class="cuerpo">
         <nav aria-label="Menú principal">
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
@@ -26,19 +31,18 @@
                 <li><a href="historia.html">Historia y jugadores</a></li>
                 <li><a href="ranking-jugadores.html">Ranking de jugadores</a></li>
                 <li><a href="ecuador.html">Póker en Ecuador</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
-    </header>
-
     <main id="contenido">
 
-        <section>
+        <section class="tarjeta">
             <h2>Qué es un torneo</h2>
             <p>En un torneo todos los jugadores pagan una <strong>cuota de entrada</strong> y reciben la misma cantidad de fichas.<br>
             Las ciegas suben cada cierto tiempo, así que el juego se vuelve más agresivo con el paso de las horas.</p>
         </section>
 
-        <article>
+        <article class="tarjeta">
             <h2>Tipos de torneo</h2>
             <p>Estas son las modalidades más comunes:</p>
             <dl>
@@ -53,7 +57,7 @@
             </dl>
         </article>
 
-        <section>
+        <section class="tarjeta">
             <h2>Ejemplo de estructura de ciegas</h2>
             <p>Así suben las apuestas obligatorias en un torneo de ejemplo:</p>
             <table>
@@ -107,20 +111,21 @@
             </table>
         </section>
 
-        <section>
+        <section class="tarjeta">
             <h2>Premio para el campeón</h2>
-            <figure>
+            <figure class="figura">
                 <img src="../images/trofeo.svg" alt="Trofeo dorado de campeón sobre una base de madera" width="200" height="200" loading="lazy">
                 <figcaption>El trofeo del <strong>campeón</strong> del torneo.</figcaption>
             </figure>
         </section>
 
-        <aside>
+        <aside class="destacado">
             <h3>Consejo</h3>
             <p><em>Juega con paciencia al principio.</em> Los primeros niveles tienen ciegas bajas, así que conviene observar a los demás jugadores antes de arriesgar fichas.</p>
         </aside>
 
     </main>
+    </div>
 
     <footer>
         <p>Desarrollado por: Brandon (BFRZ)</p>

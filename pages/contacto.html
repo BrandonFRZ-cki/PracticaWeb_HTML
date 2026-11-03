@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacto de BFRZ: envía tu nombre, correo, asunto y mensaje.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BFRZ - Contacto">
+    <link rel="icon" href="../images/as-picas.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <title>BFRZ - Contacto</title>
+</head>
+<body id="arriba">
+
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <header>
+        <img class="logo" src="../images/Logo/BFRZ_Logo_FondoNegro_Transparente.png" alt="Logotipo de BFRZ" width="130" height="130">
+        <h1>Contacto</h1>
+        <marquee behavior="scroll" direction="left" scrollamount="6">Escríbenos tu duda o comentario &#9829; Los campos marcados con * son obligatorios</marquee>
+    </header>
+
+    <div class="cuerpo">
+        <nav aria-label="Menú principal">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="reglas.html">Reglas</a></li>
+                <li><a href="manos.html">Ranking de manos</a></li>
+                <li><a href="torneos.html">Torneos</a></li>
+                <li><a href="glosario.html">Glosario</a></li>
+                <li><a href="historia.html">Historia y jugadores</a></li>
+                <li><a href="ranking-jugadores.html">Ranking de jugadores</a></li>
+                <li><a href="ecuador.html">Póker en Ecuador</a></li>
+                <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <main id="contenido">
+
+            <section class="tarjeta" id="formulario-contacto">
+                <h2>Escríbenos</h2>
+                <p>Completa el formulario y envía tu mensaje. Los campos con <strong>*</strong> son obligatorios.</p>
+                <form action="procesar-contacto.php" method="post">
+
+                    <fieldset>
+                        <legend>Datos de contacto</legend>
+                        <div class="campo">
+                            <label for="nombre">Nombre completo <strong>*</strong></label>
+                            <input type="text" id="nombre" name="nombre" maxlength="100" required placeholder="Ej.: Ana Pérez">
+                        </div>
+                        <div class="campo">
+                            <label for="correo">Correo electrónico <strong>*</strong></label>
+                            <input type="email" id="correo" name="correo" maxlength="150" required placeholder="nombre@correo.com">
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Mensaje</legend>
+                        <div class="campo">
+                            <label for="asunto">Asunto <strong>*</strong></label>
+                            <input type="text" id="asunto" name="asunto" maxlength="150" required placeholder="Ej.: Duda sobre las reglas">
+                        </div>
+                        <div class="campo">
+                            <label for="mensaje">Mensaje <strong>*</strong></label>
+                            <textarea id="mensaje" name="mensaje" rows="6" maxlength="2000" required placeholder="Escribe tu mensaje aquí"></textarea>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="boton">Enviar mensaje</button>
+                </form>
+            </section>
+
+            <aside class="destacado">
+                <h3>Antes de enviar</h3>
+                <p>Revisa que el correo sea válido. El nombre admite hasta 100 caracteres, el correo y el asunto hasta 150, y el mensaje hasta 2000.</p>
+            </aside>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>Desarrollado por: Brandon (BFRZ)</p>
+        <address>
+            Correo: <a href="mailto:brandonfrz2006@gmail.com">brandonfrz2006@gmail.com</a>
+        </address>
+        <p>&copy; <time datetime="2026">2026</time> Todos los derechos reservados.</p>
+        <p><a href="#arriba">Volver arriba</a></p>
+    </footer>
+
+</body>
+</html>

@@ -7,15 +7,20 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="BFRZ - Ranking de manos de póker">
     <link rel="icon" href="../images/as-picas.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/estilos.css">
     <title>BFRZ - Ranking de manos</title>
 </head>
 <body id="arriba">
 
-    <a href="#contenido">Saltar al contenido</a>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
 
     <header>
+        <img class="logo" src="../images/Logo/BFRZ_Logo_FondoNegro_Transparente.png" alt="Logotipo de BFRZ" width="130" height="130">
         <h1>Ranking de manos</h1>
         <marquee behavior="scroll" direction="left" scrollamount="6">Escalera real &gt; escalera de color &gt; póker &gt; full &#9824; Memorízalas</marquee>
+    </header>
+
+    <div class="cuerpo">
         <nav aria-label="Menú principal">
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
@@ -26,13 +31,12 @@
                 <li><a href="historia.html">Historia y jugadores</a></li>
                 <li><a href="ranking-jugadores.html">Ranking de jugadores</a></li>
                 <li><a href="ecuador.html">Póker en Ecuador</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
-    </header>
-
     <main id="contenido">
 
-        <section>
+        <section class="tarjeta">
             <h2>Jugadas de mayor a menor valor</h2>
             <p>La tabla muestra las <strong>10 jugadas</strong> del Texas Hold'em, desde la más alta (1) hasta la más baja (10).<br>
             Una jugada siempre vence a todas las que aparecen debajo de ella.</p>
@@ -112,7 +116,7 @@
             </table>
         </section>
 
-        <section>
+        <section class="tarjeta">
             <h2>Pon a prueba tu memoria</h2>
             <p>Intenta responder antes de abrir la respuesta.</p>
             <details>
@@ -129,7 +133,7 @@
             </details>
         </section>
 
-        <article>
+        <article class="tarjeta">
             <h2>Cómo desempatar</h2>
             <p>Cuando dos jugadores tienen la misma jugada, gana quien tenga las cartas más altas. Por ejemplo:</p>
             <ul>
@@ -140,20 +144,21 @@
             </ul>
         </article>
 
-        <section>
+        <section class="tarjeta">
             <h2>As de picas</h2>
-            <figure>
+            <figure class="figura">
                 <img src="../images/as-picas.svg" alt="As de picas, una carta blanca con borde dorado y el símbolo de picas en el centro" width="200" height="280" loading="lazy">
                 <figcaption>El <em>as de picas</em>, una de las cartas más conocidas de la baraja.</figcaption>
             </figure>
         </section>
 
-        <aside>
+        <aside class="destacado">
             <h3>Recuerda</h3>
             <p>El <strong>as</strong> puede valer como carta alta (la más alta) o como la carta más baja en una escalera del tipo A-2-3-4-5.</p>
         </aside>
 
     </main>
+    </div>
 
     <footer>
         <p>Desarrollado por: Brandon (BFRZ)</p>
