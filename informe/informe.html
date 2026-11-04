@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Informe técnico · Práctica 01 · BFRZ</title>
+  <style>
+    :root { --dorado: #b8912a; --texto: #222; --suave: #666; --linea: #d9d2bd; --fondo-tabla: #f6f1e1; }
+    * { box-sizing: border-box; }
+    body { font-family: "Georgia", "Times New Roman", serif; font-size: 11pt; line-height: 1.55; color: var(--texto); margin: 0 auto; max-width: 860px; padding: 2rem 1.25rem 4rem; }
+    h1 { font-size: 2rem; color: #111; margin: 0 0 .25rem; }
+    h2 { font-size: 1.35rem; color: var(--dorado); border-bottom: 2px solid var(--dorado); padding-bottom: .25rem; margin-top: 2.2rem; page-break-after: avoid; }
+    h3 { font-size: 1.05rem; margin: 1.4rem 0 .4rem; page-break-after: avoid; }
+    p, li { text-align: justify; }
+    .portada { text-align: center; padding: 3rem 0 2rem; border-bottom: 1px solid var(--linea); margin-bottom: 1.5rem; }
+    .portada .sub { color: var(--suave); font-style: italic; }
+    .meta { font-size: .95rem; color: var(--suave); }
+    table { width: 100%; border-collapse: collapse; margin: .8rem 0 1.2rem; font-size: .92rem; page-break-inside: auto; }
+    th, td { border: 1px solid var(--linea); padding: .45rem .55rem; vertical-align: top; text-align: left; }
+    th { background: var(--dorado); color: #fff; }
+    tbody tr:nth-child(even) td { background: var(--fondo-tabla); }
+    tr { page-break-inside: avoid; }
+    code, pre { font-family: "Menlo", "Consolas", monospace; font-size: .85rem; }
+    code { background: #f1efe8; padding: .05rem .3rem; border-radius: 3px; }
+    pre { background: #f6f6f3; border: 1px solid var(--linea); border-radius: 6px; padding: .8rem 1rem; overflow-x: auto; white-space: pre; }
+    figure { margin: 1rem 0 1.4rem; page-break-inside: avoid; text-align: center; }
+    figure img { max-width: 100%; height: auto; border: 1px solid var(--linea); border-radius: 4px; }
+    figcaption { font-size: .85rem; color: var(--suave); margin-top: .35rem; font-style: italic; }
+    .pendiente { color: #9a3412; font-weight: bold; }
+    .nota { border-left: 4px solid var(--dorado); background: #fbf7ea; padding: .6rem .9rem; margin: 1rem 0; }
+    .indice ol { columns: 2; }
+    @media print {
+      body { padding: 0; font-size: 10.5pt; }
+      h2 { page-break-before: auto; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="portada">
+  <p class="meta">Universidad Politécnica Salesiana · Carrera de Computación</p>
+  <h1>Informe técnico · Práctica 01</h1>
+  <p class="sub">Estructura con HTML, diseño con CSS e integración de un formulario de contacto con PHP</p>
+  <p><strong>Asignatura:</strong> Programación y Plataformas Web · <strong>Docente:</strong> Gabriel A. León Paredes, Ph.D.</p>
+  <p><strong>Autor:</strong> Brandon Fernando Rivera Zambrano · <strong>Fecha:</strong> 04/11/2026</p>
+  <p class="meta">Sitio temático: <strong>BFRZ</strong> (póker)</p>
+</header>
+
+<section class="indice">
+  <h2>Índice</h2>
+  <ol>
+    <li>Objetivo</li>
+    <li>Descripción de la solución</li>
+    <li>Explicación de CSS</li>
+    <li>Diseño de la base de datos</li>
+    <li>Flujo formulario – PHP – base de datos – consulta</li>
+    <li>Pruebas</li>
+    <li>Dificultades y soluciones</li>
+    <li>Conclusiones</li>
+    <li>Recursos (GitHub y YouTube)</li>
+  </ol>
+</section>
+
+<h2>1. Objetivo</h2>
+<p>Desarrollar un sitio web de temática libre con HTML y CSS, con al menos cinco páginas, navegación y recursos multimedia, e integrar un formulario de contacto con validación, almacenamiento y consulta mediante PHP, con una base de datos diseñada y justificada por el estudiante.</p>
+
+<h2>2. Descripción de la solución</h2>
+<p>El sitio, titulado <strong>BFRZ</strong>, explica las siglas <em>Bet · Fold · River · Zzz</em> de una mano de póker. Está compuesto por nueve páginas HTML: <code>index.html</code> y ocho páginas en <code>pages/</code> (contacto, reglas, ranking de manos, torneos, glosario, historia, ecuador y manos). Todas comparten la misma cabecera, la misma navegación lateral y el mismo pie de página con el nombre del autor, un enlace <code>mailto:</code> y la información de copyright.</p>
+<p>El contenido usa etiquetas semánticas de HTML5 (<code>header</code>, <code>nav</code>, <code>main</code>, <code>article</code>, <code>figure</code>, <code>footer</code>), encabezados, párrafos con <code>strong</code>, <code>em</code> y <code>br</code>, tablas, listas ordenadas y no ordenadas, y multimedia (audio, video con subtítulos y un video de YouTube). Hay más de cinco imágenes organizadas en carpetas y referenciadas con rutas relativas; una de ellas funciona como enlace.</p>
+<p>La parte dinámica es el formulario de contacto de <code>pages/contacto.html</code>. Envía por <strong>POST</strong> a <code>procesar-contacto.php</code>, que valida en el servidor, guarda en MySQL con consultas preparadas y muestra una confirmación o errores comprensibles. La página <code>consultar-mensajes.php</code> muestra los registros en una tabla con los estilos del sitio.</p>
+
+<h2>3. Explicación de CSS</h2>
+<p>La hoja <code>css/estilos.css</code> es externa y se enlaza desde todas las páginas, incluidas las generadas con PHP (<code>../css/estilos.css</code>). Está organizada con comentarios por sección y no usa estilos en línea, frameworks ni plantillas.</p>
+
+<h3>3.1 Herencia</h3>
+<p>En la regla <code>body</code> se definen <code>font-family</code>, <code>font-size</code>, <code>line-height</code> y <code>color</code>. Esos valores se heredan a casi todo el contenido. Para mostrar la sobrescritura, el encabezado <code>h1</code> define su propio <code>color</code> (<code>var(--texto-fuerte)</code>), que reemplaza al color heredado de <code>body</code> (<code>var(--texto)</code>). El resultado es que los títulos principales destacan del texto normal sin cambiar la tipografía, que sigue heredada. Lo mismo ocurre con los enlaces de la navegación: heredan la familia tipográfica de <code>body</code> pero redefinen su color en <code>nav a</code>.</p>
+
+<h3>3.2 Tabla de requisitos, selectores y páginas</h3>
+<table>
+  <thead>
+    <tr><th>Requisito</th><th>Selector(es) usados</th><th>Propiedades principales</th><th>Páginas donde se aplica</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Selector de etiqueta</td><td><code>body</code>, <code>h1</code>, <code>h2</code>, <code>p</code>, <code>strong</code>, <code>em</code></td><td><code>font-family</code>, <code>font-size</code>, <code>color</code></td><td>Todas</td></tr>
+    <tr><td>Selector de clase (reutilizada)</td><td><code>.tarjeta</code>, <code>.destacado</code>, <code>.figura</code>, <code>.campo</code>, <code>.boton</code>, <code>.saltar</code></td><td><code>background-color</code>, <code>border</code>, <code>padding</code></td><td>Tarjetas en <code>index.html</code>, <code>historia.html</code>, <code>torneos.html</code>; <code>.campo</code> y <code>.boton</code> en <code>contacto.html</code></td></tr>
+    <tr><td>Selector de identificador (único por página)</td><td><code>#contenido</code>, <code>#video</code></td><td><code>max-width</code>, <code>margin</code></td><td><code>index.html</code> (video) y el contenedor principal</td></tr>
+    <tr><td>Selector descendiente</td><td><code>header em</code>, <code>nav a</code>, <code>main ul</code>, <code>.figura img</code>, <code>tbody tr:nth-child(even) td</code></td><td>Estilos anidados según el contexto</td><td>Todas</td></tr>
+    <tr><td>Agrupación de selectores</td><td><code>.figura a:hover img, .figura a:focus img</code></td><td><code>border-color</code></td><td>Galerías de imágenes-enlace</td></tr>
+    <tr><td>Herencia (sobrescrita)</td><td><code>body</code> → <code>h1</code></td><td><code>color</code></td><td>Todas</td></tr>
+    <tr><td>Tipografía (fuente, tamaño, interlineado)</td><td><code>body</code>, <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>p</code></td><td><code>font-family</code>, <code>font-size</code>, <code>line-height</code>, <code>font-weight</code></td><td>Todas</td></tr>
+    <tr><td>Flexbox: cabecera, menú y contenido en dos columnas</td><td><code>body</code>, <code>.cuerpo</code>, <code>header</code>, <code>nav ul</code></td><td><code>display: flex</code>, <code>flex-direction</code>, <code>gap</code>, <code>align-items</code>, <code>justify-content</code></td><td>Todas</td></tr>
+    <tr><td>Flexbox con <code>flex-wrap</code> (distribución interior)</td><td><code>main</code> (tarjetas e imágenes)</td><td><code>display: flex</code>, <code>flex-wrap: wrap</code>, <code>gap</code></td><td><code>index.html</code>, <code>historia.html</code>, <code>ecuador.html</code></td></tr>
+    <tr><td>Modelo de caja y centrado con márgenes automáticos</td><td><code>.cuerpo</code>, <code>main</code>, <code>#video</code>, <code>.figura</code></td><td><code>margin: 0 auto</code>, <code>padding</code>, <code>border</code></td><td>Todas</td></tr>
+    <tr><td>Navegación (lista sin viñetas, enlaces en bloque)</td><td><code>nav ul</code>, <code>nav a</code></td><td><code>list-style-type: none</code>, <code>display: block</code>, <code>padding</code>, <code>background-color</code>, <code>border</code></td><td>Todas</td></tr>
+    <tr><td>Estados <code>:hover</code> y <code>:active</code></td><td><code>nav a:hover</code>, <code>nav a:active</code>, <code>main a:hover</code>, <code>.boton:hover</code>, <code>.boton:active</code></td><td><code>background-color</code>, <code>color</code></td><td>Todas</td></tr>
+    <tr><td>Imágenes proporcionales</td><td><code>img</code>, <code>img.logo</code>, <code>.figura img</code></td><td><code>max-width: 100%</code>, <code>height: auto</code></td><td>Todas</td></tr>
+    <tr><td>Listas personalizadas (diferenciadas del menú)</td><td><code>main ul</code>, <code>main ol</code></td><td><code>list-style-type: square</code> / <code>decimal</code></td><td><code>reglas.html</code>, <code>historia.html</code></td></tr>
+    <tr><td>Tablas</td><td><code>table</code>, <code>th</code>, <code>td</code>, <code>tbody th</code></td><td><code>border-collapse: collapse</code>, <code>padding</code>, <code>background-color</code></td><td><code>ecuador.html</code>, <code>ranking-jugadores.html</code>, <code>torneos.html</code>, <code>historia.html</code></td></tr>
+    <tr><td>Formulario: etiquetas en bloque, campos separados, relleno y foco</td><td><code>fieldset</code>, <code>legend</code>, <code>label</code>, <code>.campo</code>, <code>textarea</code>, <code>.campo:focus</code></td><td><code>display: block</code>, <code>margin</code>, <code>padding</code>, <code>:focus</code></td><td><code>pages/contacto.html</code></td></tr>
+    <tr><td>Pie de página después del contenido</td><td><code>footer</code>, <code>footer address</code>, <code>footer a</code></td><td>Flujo normal (sin superposición)</td><td>Todas</td></tr>
+    <tr><td>Diseño adaptable</td><td><code>@media (max-width: 800px)</code>, <code>@media (max-width: 600px)</code></td><td>Columna única en pantallas pequeñas</td><td>Todas</td></tr>
+  </tbody>
+</table>
+
+<div class="nota">
+  <strong>Nota sobre “reglas sin uso”.</strong> Cada selector de la tabla se aplica a elementos visibles de al menos una página. Los estados <code>:hover</code>, <code>:active</code> y <code>:focus</code> se verifican en la navegación y en los campos del formulario.
+</div>
+
+<h2>4. Diseño de la base de datos</h2>
+<p>Se diseñó una única tabla, <code>mensajes</code>, dentro de la base <code>contacto_web</code> (juego de caracteres <code>utf8mb4</code>, para admitir acentos y eñes). Es una base pequeña porque el caso de uso es un solo tipo de registro: un mensaje de contacto.</p>
+<table>
+  <thead><tr><th>Campo</th><th>Tipo</th><th>Restricciones</th><th>Justificación</th></tr></thead>
+  <tbody>
+    <tr><td><code>id</code></td><td><code>INT UNSIGNED</code></td><td>PRIMARY KEY, AUTO_INCREMENT, NOT NULL</td><td>Identificador único y sin valores negativos. Permite ordenar por orden de llegada.</td></tr>
+    <tr><td><code>nombre</code></td><td><code>VARCHAR(100)</code></td><td>NOT NULL</td><td>Límite de 100 caracteres exigido por el enunciado; <code>VARCHAR</code> ahorra espacio frente a <code>CHAR</code>.</td></tr>
+    <tr><td><code>correo</code></td><td><code>VARCHAR(150)</code></td><td>NOT NULL</td><td>Límite de 150 caracteres exigido. El formato se valida con <code>FILTER_VALIDATE_EMAIL</code> antes de insertar.</td></tr>
+    <tr><td><code>asunto</code></td><td><code>VARCHAR(150)</code></td><td>NOT NULL</td><td>Límite de 150 caracteres exigido.</td></tr>
+    <tr><td><code>mensaje</code></td><td><code>VARCHAR(2000)</code></td><td>NOT NULL</td><td>Límite de 2000 caracteres exigido. Se usa <code>VARCHAR</code> y no <code>TEXT</code> para que el límite quede reflejado en la propia base.</td></tr>
+    <tr><td><code>fecha_registro</code></td><td><code>DATETIME</code></td><td>NOT NULL, DEFAULT <code>CURRENT_TIMESTAMP</code></td><td>La fecha la asigna el motor, así que no depende del cliente. Permite ordenar y mostrar cuándo se envió cada mensaje.</td></tr>
+  </tbody>
+</table>
+<p>No se usan claves foráneas porque no hay relaciones entre tablas. Tampoco se guardan contraseñas ni datos sensibles, y el enunciado no pide edición ni eliminación, por lo que no se agregaron esas operaciones.</p>
+
+<h2>5. Flujo formulario – PHP – base de datos – consulta</h2>
+<p>El sitio estático se publica en GitHub Pages, y la parte PHP se ejecuta en XAMPP local y se expone con ngrok. GitHub Pages no ejecuta PHP; por eso el formulario apunta a la URL pública del túnel.</p>
+<pre>
+ Navegador ──(1) páginas, CSS, imágenes──▶ GitHub Pages (estático)
+     │
+     ├──(2) POST del formulario──▶ ngrok (https público) ──▶ Apache XAMPP :80
+     │                                                        │
+     │                                   procesar-contacto.php │  (3) valida
+     │                                                        ▼
+     │                                              MySQL · contacto_web.mensajes
+     │                                                        ▲
+     └──(4) abre consultar-mensajes.php──▶ ngrok ──▶ Apache ──┘  (5) SELECT
+</pre>
+<p><strong>Paso 1.</strong> El usuario completa <code>contacto.html</code>. Los atributos <code>required</code>, <code>maxlength</code> y <code>type="email"</code> ayudan en el cliente, pero no bastan.</p>
+<p><strong>Paso 2.</strong> El formulario envía los datos por <strong>POST</strong> a <code>procesar-contacto.php</code>.</p>
+<p><strong>Paso 3.</strong> El servidor limpia los datos con <code>trim()</code> y valida: campos obligatorios no vacíos ni solo con espacios, formato de correo y longitudes con <code>mb_strlen</code>. Si hay errores, muestra la lista con <code>htmlspecialchars</code> y no toca la base. Si todo es correcto, ejecuta un <code>INSERT</code> con <code>prepare()</code> y <code>bind_param('ssss', ...)</code>. Solo se confirma cuando <code>affected_rows</code> es 1.</p>
+<p><strong>Paso 4.</strong> La confirmación aparece únicamente tras el registro exitoso, con enlace a la consulta.</p>
+<p><strong>Paso 5.</strong> <code>consultar-mensajes.php</code> ejecuta un <code>SELECT</code> ordenado por fecha descendente. Si no hay filas, muestra “No existen mensajes registrados”. Cada dato pasa por <code>htmlspecialchars</code> antes de imprimirse.</p>
+
+<h2>6. Pruebas</h2>
+<p>Las pruebas se hicieron manualmente en el entorno local (XAMPP) y, para el envío, a través de ngrok desde el sitio publicado. Para cada caso se registra la acción, el resultado esperado, el resultado obtenido y la captura correspondiente.</p>
+
+<table>
+  <thead><tr><th>Caso</th><th>Acción o datos</th><th>Resultado esperado</th><th>Resultado obtenido</th><th>Captura</th></tr></thead>
+  <tbody>
+    <tr><td>P1</td><td>Recorrer las cinco páginas y abrir enlaces, imágenes y multimedia.</td><td>Navegación y recursos funcionales; estilos consistentes.</td><td>El sitio carga con estilos, logotipo y navegación. <span class="pendiente">Pendiente: recorrido completo de enlaces y multimedia.</span></td><td><a href="capturas/09-sitio-inicio-localhost.png">09</a></td></tr>
+    <tr><td>P2</td><td>Interactuar con el menú y los campos; reducir el ancho de la ventana.</td><td>Cambios visibles de estados y foco; tarjetas se redistribuyen sin superponerse.</td><td><span class="pendiente">Pendiente de verificar.</span></td><td>—</td></tr>
+    <tr><td>P3</td><td>Abrir la consulta antes de registrar mensajes.</td><td>Se informa que no existen mensajes.</td><td>Se muestra “No existen mensajes registrados.”</td><td><a href="capturas/11-consulta-vacia.png">11</a></td></tr>
+    <tr><td>P4</td><td>Enviar tres mensajes válidos diferentes.</td><td>Cada envío se confirma; aparecen exactamente los tres registros con datos y fecha.</td><td>Los envíos se confirman y aparecen con fecha en la consulta. <span class="pendiente">Pendiente: registrar el tercer envío y capturar la tabla con los tres registros.</span></td><td><a href="capturas/13-consulta-con-registros.png">13</a></td></tr>
+    <tr><td>P5</td><td>Enviar por separado cada campo obligatorio vacío y luego solo con espacios.</td><td>Se rechaza cada caso; no aumenta el número de registros.</td><td><span class="pendiente">Pendiente.</span></td><td>—</td></tr>
+    <tr><td>P6</td><td>Enviar un correo sin formato válido.</td><td>Se muestra error; no se inserta el mensaje.</td><td><span class="pendiente">Pendiente.</span></td><td>—</td></tr>
+    <tr><td>P7</td><td>Superar por separado cada límite: nombre 101, correo 151, asunto 151 y mensaje 2001 caracteres.</td><td>Se rechaza cada exceso sin insertar; los demás campos válidos.</td><td><span class="pendiente">Pendiente.</span></td><td>—</td></tr>
+    <tr><td>P8</td><td>Cerrar y volver a abrir la página de consulta después de registrar mensajes.</td><td>Se conservan los mensajes y sus datos.</td><td>Los mensajes se mantienen al volver a abrir la consulta desde ngrok. <span class="pendiente">Pendiente: captura del cierre y reapertura.</span></td><td><a href="capturas/13-consulta-con-registros.png">13</a></td></tr>
+  </tbody>
+</table>
+
+<p><strong>Validación del servidor (P5 a P7):</strong> para comprobar que el servidor rechaza los datos aunque el navegador no lo haga, se desactivan temporalmente las restricciones del cliente (quitando <code>required</code> y <code>maxlength</code> desde las herramientas de desarrollo) y se envían los casos. Cada variante debe registrarse en esta tabla con su captura.</p>
+
+<h3>Evidencias de configuración</h3>
+<figure>
+  <img src="capturas/01-xampp-welcome.png" alt="Panel de XAMPP al iniciar">
+  <figcaption>Figura 1. Panel de control de XAMPP 8.2.4.</figcaption>
+</figure>
+<figure>
+  <img src="capturas/02-xampp-servidores.png" alt="XAMPP con Apache y MySQL en ejecución">
+  <figcaption>Figura 2. Apache y MySQL en estado “Running”.</figcaption>
+</figure>
+<figure>
+  <img src="capturas/03-phpmyadmin-crear-bd-tabla.png" alt="Creación de la base contacto_web y la tabla mensajes en phpMyAdmin">
+  <figcaption>Figura 3. Creación de la base de datos y de la tabla <code>mensajes</code> desde phpMyAdmin.</figcaption>
+</figure>
+<figure>
+  <img src="capturas/06-phpmyadmin-describe.png" alt="Estructura de la tabla mensajes con DESCRIBE">
+  <figcaption>Figura 4. Estructura de la tabla <code>mensajes</code> (<code>DESCRIBE</code>): tipos, claves y valores por defecto.</figcaption>
+</figure>
+
+<h3>Resultados de las pruebas</h3>
+<figure>
+  <img src="capturas/10-formulario-contacto.png" alt="Formulario de contacto en el sitio">
+  <figcaption>Figura 5. Formulario de contacto con los campos obligatorios y la etiqueta asociada a cada control.</figcaption>
+</figure>
+<figure>
+  <img src="capturas/11-consulta-vacia.png" alt="Consulta de mensajes sin registros">
+  <figcaption>Figura 6. Caso P3: consulta sin mensajes.</figcaption>
+</figure>
+<figure>
+  <img src="capturas/13-consulta-con-registros.png" alt="Consulta con mensajes registrados">
+  <figcaption>Figura 7. Casos P4 y P8: mensajes registrados con nombre, correo, asunto, mensaje y fecha.</figcaption>
+</figure>
+
+<h2>7. Dificultades y soluciones</h2>
+<p>Durante la integración aparecieron los siguientes problemas. Se resolvieron así:</p>
+<ol>
+  <li><strong>Error 403 en todas las páginas de localhost.</strong> El proyecto estaba en <code>Documents</code> y se enlazó a <code>htdocs</code> con un enlace simbólico. Apache registró <code>AH00037: Symbolic link not allowed or link target not accessible</code> (Figura 8). La causa fue que el usuario del servidor no podía entrar a la carpeta personal del usuario. Se resolvió moviendo el proyecto directamente dentro de <code>htdocs</code>.</li>
+  <li><strong>Permisos de archivos.</strong> Al editar <code>contacto.html</code> con <code>sed -i</code>, el archivo quedó con permisos que impedían su lectura, y Apache respondió 403. Se corrigió con <code>chmod 644</code>.</li>
+  <li><strong>Autenticación de ngrok.</strong> El primer intento de configurar el token falló porque el comando usaba el texto de ejemplo. Se corrigió copiando el comando completo desde el panel de ngrok.</li>
+  <li><strong>Imágenes rotas.</strong> Los archivos estaban bien, pero Apache no podía leer la carpeta <code>images/</code> por ACL heredadas de macOS. Se eliminaron con <code>chmod -RN</code>.</li>
+</ol>
+<figure>
+  <img src="capturas/07-error-403-apache.png" alt="Página de error 403 en localhost">
+  <figcaption>Figura 8. Error 403 durante la configuración del enlace a <code>htdocs</code>.</figcaption>
+</figure>
+<figure>
+  <img src="capturas/08-log-apache-symlink.png" alt="Registro de errores de Apache">
+  <figcaption>Figura 9. Registro de errores de Apache con <code>AH00037</code>.</figcaption>
+</figure>
+
+<h2>8. Conclusiones</h2>
+<ul>
+  <li>Separar la parte estática de la dinámica permite publicar la presentación en GitHub Pages y mantener la lógica PHP y la base de datos en un entorno local. El costo es depender de un túnel (ngrok) mientras se hacen las pruebas.</li>
+  <li>La validación en el servidor es indispensable: el cliente puede desactivarse y el servidor es la única barrera real. Las consultas preparadas y <code>htmlspecialchars</code> cubren los dos riesgos más comunes, la inyección SQL y el XSS.</li>
+  <li>Con CSS, la herencia desde <code>body</code> reduce la repetición, y Flexbox resuelve la distribución de la cabecera, el menú y las tarjetas con menos código que con posicionamiento manual.</li>
+  <li>Los problemas de integración que más tiempo tomaron fueron de configuración del entorno (permisos y rutas), no de código. Aprendí a leer el registro de errores de Apache, que indica la causa exacta.</li>
+</ul>
+
+<h2>9. Recursos</h2>
+<ul>
+  <li><strong>Repositorio GitHub:</strong> <a href="https://github.com/BrandonFRZ-cki/PracticaWeb_HTML">github.com/BrandonFRZ-cki/PracticaWeb_HTML</a></li>
+  <li><strong>Sitio publicado (GitHub Pages):</strong> <a href="https://brandonfrz-cki.github.io/PracticaWeb_HTML/">brandonfrz-cki.github.io/PracticaWeb_HTML</a></li>
+  <li><strong>Video explicativo (YouTube):</strong> <span class="pendiente">[pendiente: enlace del video]</span></li>
+</ul>
+<p class="meta">El formulario y la consulta PHP requieren XAMPP y ngrok activos. Ver las instrucciones de ejecución en el README del repositorio.</p>
+
+</body>
+</html>
